@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 
 # Agrega todas las aplicaciones dentro de la carpeta "app"
 #for app in os.listdir(os.path.join(BASE_DIR, 'apps')):
- #   if app.endswith('py') and not app.startswith('__'):
+ #   if app.endswith('py') and n    ot app.startswith('__'):
   #      INSTALLED_APPS.append('apps.' + app.split('.')[0])
         
 MIDDLEWARE = [
@@ -97,14 +97,30 @@ WSGI_APPLICATION = 'apipos.wsgi.application'
     #}
 #}
 
+
 DATABASES = {
-    'default': dj_database_url.config(
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'datapos',
+        'USER': 'jorge',
+        'PASSWORD': '3vKYhOZ6qLxplkuJrYPUNWeiBIL5WaIA',
+        'HOST': 'dpg-cqde6i1u0jms738nsgvg-a.oregon-postgres.render.com',
+        'PORT': '5432',
+    }
+}
+'''
+DATABASES = {
+    'default':{
+
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/apiPOS',
+        default='postgresql://jorge:3vKYhOZ6qLxplkuJrYPUNWeiBIL5WaIA@dpg-cqde6i1u0jms738nsgvg-a.oregon-postgres.render.com/datapos',
+        USER: 'eduardo',
+        PASSWORD: '',
         conn_max_age=600    
+    }
     )
 }
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
